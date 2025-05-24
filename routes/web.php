@@ -1,11 +1,5 @@
 <?php
 
-use App\Livewire\Admin\Dashboard;
-use App\Livewire\Admin\Internships;
-use App\Livewire\Admin\Students;
-use App\Livewire\Admin\Industries;
-use App\Livewire\Admin\Teachers;
-use App\Livewire\Admin\Users;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -15,14 +9,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/admin/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/admin/users', Users::class)->name('users');
-    Route::get('/admin/internships', Internships::class)->name('internships');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-    Route::get('/admin/students', Students::class)->name('students');
-    Route::get('/admin/teachers', Teachers::class)->name('teachers');
-    Route::get('/admin/industries', Industries::class)->name('industries');
+Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', \App\Livewire\Admin\Dashboard::class)->name('admin-dashboard');
+    Route::get('/admin/users', \App\Livewire\Admin\Users::class)->name('users');
+    Route::get('/admin/internships', \App\Livewire\Admin\Internships::class)->name('internships');
+
+    Route::get('/admin/students', \App\Livewire\Admin\Students::class)->name('students');
+    Route::get('/admin/teachers', \App\Livewire\Admin\Teachers::class)->name('teachers');
+    Route::get('/admin/industries', \App\Livewire\Admin\Industries::class)->name('industries');
+});
+
+Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
+    Route::get('/siswa/dashboard', \App\Livewire\Siswa\Dashboard::class)->name('siswa-dashboard');
 });
 
 Route::middleware(['auth'])->group(function () {
