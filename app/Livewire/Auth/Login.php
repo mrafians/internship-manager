@@ -43,7 +43,18 @@ class Login extends Component
         RateLimiter::clear($this->throttleKey());
         Session::regenerate();
 
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+        // Redirect berdasarkan role user
+        $user = Auth::user();
+
+        if ($user->roles === 'admin') {
+            $this->redirect(route('admin-dashboard'), navigate: true);
+        }
+        elseif ($user->roles === 'siswa') {
+            $this->redirect(route('siswa-dashboard'), navigate: true);
+        }
+        else {
+            $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+        }
     }
 
     /**
