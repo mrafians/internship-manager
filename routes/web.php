@@ -16,12 +16,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    // Overview Page
     Route::get('/admin/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/admin/users', Users::class)->name('users');
     Route::get('/admin/internships', Internships::class)->name('internships');
 
-    // Data Page
     Route::get('/admin/students', Students::class)->name('students');
     Route::get('/admin/teachers', Teachers::class)->name('teachers');
     Route::get('/admin/industries', Industries::class)->name('industries');
