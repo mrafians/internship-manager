@@ -12,13 +12,13 @@
             </a>
 
             <flux:navbar class="-mb-px max-lg:hidden">
-                <flux:navbar.item icon="layout-grid" :href="route('siswa-dashboard')" :current="request()->routeIs('siswa-dashboard')" wire:navigate>
+                <flux:navbar.item icon="layout-grid" :href="route('siswa.dashboard')" :current="request()->routeIs('siswa.dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                 </flux:navbar.item>
-                <flux:navbar.item icon="user" {{-- :href="route('siswa-dashboard')" :current="request()->routeIs('siswa-dashboard')" --}} wire:navigate>
+                <flux:navbar.item icon="user" :href="route('siswa.teachers')" :current="request()->routeIs('siswa.teachers')" wire:navigate>
                     {{ __('Guru') }}
                 </flux:navbar.item>
-                <flux:navbar.item icon="building-office-2" {{-- :href="route('siswa-dashboard')" :current="request()->routeIs('siswa-dashboard')" --}} wire:navigate>
+                <flux:navbar.item icon="building-office-2" :href="route('siswa.industries')" :current="request()->routeIs('siswa.industries')" wire:navigate>
                     {{ __('Industri') }}
                 </flux:navbar.item>
             </flux:navbar>
@@ -80,13 +80,13 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')">
-                    <flux:navlist.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:navlist.item icon="layout-grid" :href="route('siswa.dashboard')" :current="request()->routeIs('siswa.dashboard')" wire:navigate>
                       {{ __('Dashboard') }}
                     </flux:navlist.item>
-                    <flux:navlist.item icon="layout-grid" {{-- :href="route('dashboard')" :current="request()->routeIs('dashboard')" --}} wire:navigate>
+                    <flux:navlist.item icon="layout-grid" :href="route('siswa.teachers')" :current="request()->routeIs('siswa.teachers')" wire:navigate>
                       {{ __('Guru') }}
                     </flux:navlist.item>
-                    <flux:navlist.item icon="layout-grid" {{-- :href="route('dashboard')" :current="request()->routeIs('dashboard')" --}} wire:navigate>
+                    <flux:navlist.item icon="layout-grid" :href="route('siswa.industries')" :current="request()->routeIs('siswa.industries')" wire:navigate>
                       {{ __('Industri') }}
                     </flux:navlist.item>
                 </flux:navlist.group>

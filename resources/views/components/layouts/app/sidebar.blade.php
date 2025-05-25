@@ -13,9 +13,9 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Overview')" class="grid">
-                    <flux:navlist.item icon="home" :href="route('admin-dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
-                    <flux:navlist.item icon="user" :href="route('users')" :current="request()->routeIs('users')" wire:navigate>{{ __('Users') }}</flux:navlist.item>
-                    <flux:navlist.item icon="folder-open" :href="route('internships')" :current="request()->routeIs('internships')" wire:navigate>{{ __('Laporan PKL') }}</flux:navlist.item>
+                    <flux:navlist.item icon="home" :href="route('admin.dashboard')" :current="request()->routeIs('admin.dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user" :href="route('admin.users')" :current="request()->routeIs('admin.users')" wire:navigate>{{ __('Users') }}</flux:navlist.item>
+                    <flux:navlist.item icon="folder-open" :href="route('admin.internships')" :current="request()->routeIs('admin.internships')" wire:navigate>{{ __('Laporan PKL') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
@@ -23,9 +23,9 @@
             
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Data')" class="grid">
-                    <flux:navlist.item icon="user-group" :href="route('students')" :current="request()->routeIs('students')" wire:navigate>{{ __('Data Siswa') }}</flux:navlist.item>
-                    <flux:navlist.item icon="users" :href="route('teachers')" :current="request()->routeIs('teachers')" wire:navigate>{{ __('Data Guru') }}</flux:navlist.item>
-                    <flux:navlist.item icon="building-office-2" :href="route('industries')" :current="request()->routeIs('industries')" wire:navigate>{{ __('Data Industri') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('admin.students')" :current="request()->routeIs('admin.students')" wire:navigate>{{ __('Data Siswa') }}</flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('admin.teachers')" :current="request()->routeIs('admin.teachers')" wire:navigate>{{ __('Data Guru') }}</flux:navlist.item>
+                    <flux:navlist.item icon="building-office-2" :href="route('admin.industries')" :current="request()->routeIs('admin.industries')" wire:navigate>{{ __('Data Industri') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
