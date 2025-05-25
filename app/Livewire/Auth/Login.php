@@ -47,10 +47,10 @@ class Login extends Component
         $user = Auth::user();
 
         if ($user->roles === 'admin') {
-            $this->redirect(route('admin-dashboard'), navigate: true);
+            $this->redirect(route('admin.dashboard'), navigate: true);
         }
         elseif ($user->roles === 'siswa') {
-            $this->redirect(route('siswa-dashboard'), navigate: true);
+            $this->redirect(route('siswa.dashboard'), navigate: true);
         }
         else {
             $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
