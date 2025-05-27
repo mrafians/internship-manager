@@ -53,7 +53,8 @@ class Login extends Component
             $this->redirect(route('siswa.dashboard'), navigate: true);
         }
         else {
-            $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+            // $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+            $this->redirect(route('home'), navigate: true);
         }
     }
 
