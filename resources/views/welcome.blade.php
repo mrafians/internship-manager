@@ -39,6 +39,8 @@
                         >
                             Dashboard
                         </a>
+                        @else
+                        {{ abort(403, 'user sudah dibuat, silahkan tunggu info dari administrator.') }}
                         @endif
                     @else
                         <a
